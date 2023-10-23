@@ -1,19 +1,70 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style type="text/css">
+            .product {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgb(246, 62, 92);
+            }
+
+            body {
+                background-color: rgb(255, 238, 255);
+                color: rgb(3, 3, 99);
+                margin-left: 10px;
+            }
+
+            #title {
+                font-size: 40px;
+            }
+
+            .product .description:before{
+                content:"Description: ";
+                font-weight: bold;
+            }
+
+            .product .size:before{
+                content:"Size: ";
+                font-weight: bold;
+            }
+
+            .product .price:before{
+                content:"Price: ";
+                font-weight: bold;
+            }
+
+            .product .categories:before{
+                content:"Categories: ";
+                font-weight: bold;
+            }
+
+        </style>
     </head>
     <body>
+        <h1 id="title">Product List </h1>
+        <div id="products-wrapper"></div>
         <script>
-            $.get("https://lindsaygarf.github.io/JSON/products.json", function(products) {
-                str = ""
-                products.forEach(function(product){
-                    str += "<div>" + product.name + "</div>";
-                    str += "<div>" + product.description + "</div>";
-                    str += "<div>" + product.size + "</div>";
-                    str += "<div>" + product.price + "</div>";
-                    str += "<div>" + product.categories + "</div>";
-                })
-                document.write(str);
+            $.get("https://lindsaygarf.github.io/JSONlist/products.json", function(data) {
+                json = JSON.stringify(data)
+                products = JSON.parse(json);
+                str= "";
+                page = document.getElementById("products-wrapper");
+
+                for(j = 0; j < products.length; j++) {
+                    str += "<div class='product'>";
+                    str += "<h1>" + products[j].name + "</h1>";
+                    str += "<p class='description'>" + products[j].description + "</p>";
+                    str += "<p class='size'>" + products[j].size + "</p>";
+                    str += "<p class='price'>" + products[j].price + "</p>";
+                    str += "<p class='categories'>";
+                    for (i = 0; i < products[j].categories.length; i++) {
+                        str += " " + products[j].categories[i] 
+                        if (i != (products[j].categories.length - 1)) {
+                            str += ","
+                        }
+                    }
+                    str += "</p>" + "</div>";
+                }
+                page.innerHTML += str;
             });
         </script>
         

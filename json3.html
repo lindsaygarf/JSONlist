@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style type="text/css">
+            body {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                text-align: center;
+                background-color: rgb(255, 238, 255);
+                color: rgb(246, 88, 114);
+            }
+
+            form {
+                margin-top: px;
+                font-size: 20px;
+            }
+
+            label {
+                font-weight: 600;
+            }
+
+            #results {
+                margin-top: 20px;
+            }
+
+            #button {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 12px;
+            }
+
+            #header {
+                font-size: 30px;
+            }
+        </style>
+
+
+        <script>
+
+            // createOptions
+            // Purpose:    Creates the options in the drop down menu to be the different categories read in from teh JSON
+            // Parameters: categories: an array of all categories in the JSON file
+            // Returns:    All of the options that were created
+            function createOptions(categories) {
+                options = "";
+                for (n = 0; n < categories.length; n++) {
+                    options += "<option>" + categories[n] + "</option>";
+                }
+
+                return options;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 id="header">Filter Items By Category</h1>
+        <form>
+            <label id="label">Select a category to filer by:</label>
+            <select id="dropdown">
+                <option id="preset">Select an option</option>
+            </select>
+            <input type="button" value="Filter" id="button">
+            <div id="results"></div>
+        </form>
+        <script>
+            $.get("https://lindsaygarf.github.io/JSONlist/products.json", function(data) {
+                json = JSON.stringify(data)
+                products = JSON.parse(json);
+                categories = [];
+
+                for(i = 0; i < products.length; i++) {
+                    for(j = 0; j < products[i].categories.length; j++) {
+                        if(!categories.includes(products[i].categories[j])) {
+                            categories.push(products[i].categories[j]);
+                        }
+                    }
+                } 
+
+                var dropdown = document.getElementById("dropdown");
+               
+                dropdown.innerHTML += createOptions(categories);
+
+                document.getElementById("button").addEventListener("click", function() {
+                    chosen = dropdown.value;
+
+                    for (i = 0; i < products.length; i++) {
+                        if(products[i].categories.includes(chosen)) {
+                            results.innerHTML += products[i].name + " </br>";
+                        }
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
