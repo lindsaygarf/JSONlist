@@ -1,0 +1,86 @@
+[
+    {
+        "name": "White Tank Top",
+        "description": "White women's tank top with red hearts",
+        "size": "small",
+        "price": 14.99,
+        "categories": ["top","clothing"]
+    },
+    {
+        "name": "Purple Tank Top",
+        "description": "Purple women's tank top with stripes",
+        "size": "large",
+        "price": 14.99,
+        "categories": ["top","clothing"]
+    },
+    {
+        "name": "Green Dress",
+        "description": "Green floral maxi dress",
+        "size": "medium",
+        "price": 34.59,
+        "categories": ["dress","clothing"]
+    },
+    {
+        "name": "Dark Wash Jeans",
+        "description": "Dark wash women's jeans",
+        "size": "6",
+        "price": 40.55,
+        "categories": ["denim","clothing"]
+    },
+    {
+        "name": "Light Wash Ripped Jeans",
+        "description": "Dark wash women's jeans with rips on knees",
+        "size": "4",
+        "price": 47.55,
+        "categories": ["denim","clothing"]
+    },
+    {
+        "name": "Puffer Jacket",
+        "description": "Black puffer winter coat",
+        "size": "medium",
+        "price": 54.99,
+        "categories": ["jacket","winter","clothing"]
+    },
+    {
+        "name": "Brown Snow Boots",
+        "description": "Brown women's snow boots with fur lining",
+        "size": "9",
+        "price": 50.49,
+        "categories": ["winter","shoe"]
+    },
+    {
+        "name": "Gold Heart Necklace",
+        "description": "Gold chain necklace with pink heart on it",
+        "size": "one-size",
+        "price": 64.99,
+        "categories": ["jewlery"]
+    },
+    {
+        "name": "Hoop Earrings",
+        "description": "Mini gold hoop earrings",
+        "size": "one-size",
+        "price": 40.99,
+        "categories": ["jewlery"]
+    },
+    {
+        "name": "White Women's Sneakers",
+        "description": "Women's white sneakers with purple stripes on side",
+        "size": "9",
+        "price": 59.99,
+        "categories": ["shoes"]
+    },
+    {
+        "name": "White Smile Sweatshirt",
+        "description": "Oversized women's sweatshirt with a smiley face on it",
+        "size": "large",
+        "price": 34.99,
+        "categories": ["clothing"]
+    },
+    {
+        "name": "Denim Skirt",
+        "description": "Dark wash denim skirt",
+        "size": "medium",
+        "price": 40.99,
+        "categories": ["denim","clothing"]
+    }
+]
