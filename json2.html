@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $.get("https://lindsaygarf.github.io/JSON/products.json", function(products) {
+                str = ""
+                products.forEach(function(product){
+                    str += "<div>" + product.name + "</div>";
+                    str += "<div>" + product.description + "</div>";
+                    str += "<div>" + product.size + "</div>";
+                    str += "<div>" + product.price + "</div>";
+                    str += "<div>" + product.categories + "</div>";
+                })
+                document.write(str);
+            });
+        </script>
+        
+    </body>
+</html>
